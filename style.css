@@ -1,0 +1,88 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@200;400;900&display=swap");
+.container {  display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 20px 20px;
+
+    grid-template-areas:
+      "header header header header"
+      "convert locale locale history"
+      "convert weather weather history";
+
+  }
+  
+  .header { 
+    grid-area: header;
+    align-self: stretch;
+    justify-self: stretch;
+    background: teal;
+    border: 2px solid #1b1a1a;
+    text-align: center;
+    color: #FFFAFB;
+
+}
+  
+  .locale { 
+    grid-area: locale;
+    justify-self: auto;
+    
+    background: rgb(213, 220, 220);
+    border: 1px solid #1b1a1a;
+    text-align: center;
+    color: #0a0909;
+
+}
+  
+  .history { 
+    grid-area: history;
+    background: rgb(213, 220, 220);
+    border: 1px solid #1b1a1a;
+    text-align: center;
+    color: #050404;
+
+}
+  
+  .weather {  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "today tomorrow dayAfter"
+      "today tomorrow dayAfter"
+      "today tomorrow dayAfter";
+    grid-area: weather;
+}
+  
+  .today { 
+      grid-area: today; 
+}
+  
+  .tomorrow { grid-area: tomorrow; }
+  
+  .dayAfter { grid-area: dayAfter; }
+  
+  .convert { grid-area: convert; }
+
+  
+html,
+body {
+  background: var(--color-light);
+  color: var(--color-dark);
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+  
+  
