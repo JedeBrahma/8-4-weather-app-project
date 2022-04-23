@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Source+Sans+Pro:wght@200;400;900&display=swap");
-.container {  display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 20px 20px;
+.container {  
+    display: grid;
+    /* grid-template-columns: 1fr 2fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr ; */
+    gap: 15px 15px 15px 15px;
 
     grid-template-areas:
       "header header header header"
@@ -13,21 +14,21 @@
   
   .header { 
     grid-area: header;
-    align-self: stretch;
-    justify-self: stretch;
+    align-self: auto;
+    /* justify-self: stretch; */
     background: teal;
-    border: 2px solid #1b1a1a;
+    border: 1px solid #1b1a1a;
     text-align: center;
     color: #FFFAFB;
 
 }
   
   .locale { 
-    grid-area: locale;
-    justify-self: auto;
-    
+    grid-area: locale; 
+    margin-top: 15px; 
+    border-radius: 10%;
     background: rgb(213, 220, 220);
-    border: 1px solid #1b1a1a;
+    /* border: 1px solid #1b1a1a; */
     text-align: center;
     color: #0a0909;
 
@@ -35,39 +36,62 @@
   
   .history { 
     grid-area: history;
+    margin-top: 15px;
     background: rgb(213, 220, 220);
+    list-style-type: circle;
     border: 1px solid #1b1a1a;
+    border-radius: 20%;
     text-align: center;
     color: #050404;
 
 }
   
   .weather {  
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px 10px;
-    grid-auto-flow: row;
+    grid-area: weather;
+    display:grid;
+
+    /* grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr; */
+    gap: 10px 10px 10px;
+    margin-top: 15px;
+    /* grid-auto-flow: column; */
     grid-template-areas:
       "today tomorrow dayAfter"
       "today tomorrow dayAfter"
       "today tomorrow dayAfter";
-    grid-area: weather;
+    
+    text-align: center;
+    border: 1px solid #1b1a1a;
+    border-radius: 10%;
 }
   
   .today { 
       grid-area: today; 
+     
 }
   
-  .tomorrow { grid-area: tomorrow; }
+  .tomorrow { grid-area: tomorrow;
+    }
   
   .dayAfter { grid-area: dayAfter; }
   
-  .convert { grid-area: convert; }
-
+  .convert { grid-area: convert; 
+    margin-top: 15px;
+    text-align: center;
+    border: 1px solid #1b1a1a;
+    border-radius: 20%;
+    background: rgb(213, 220, 220);
+  }
+  #temp-to-convert {
+    border-radius: 40%;
+  }
+  #temp-submit {
+    border-radius: 40%;
+  }
   
 html,
 body {
+ 
   background: var(--color-light);
   color: var(--color-dark);
   font-family: "Open Sans", sans-serif;
@@ -84,5 +108,17 @@ h6 {
   font-family: "Source Sans Pro", sans-serif;
 }
 
+h3,
+li {
+    text-transform: capitalize;
+}
+a {
+  color: teal
+}
   
-  
+@media (max-width: 780px) {
+  .container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Weather App</title>
     <link rel="stylesheet" href="style.css" />
     <script defer src="weather.js"></script>
 </head>
@@ -17,76 +17,66 @@
                         <form>
                             <label for="pick-locale">
                              Pick a Location
-                              <input id="pick-locale" type="text" name="location" />
+                              <input type="text" id="pick-locale"  name="location" />
                             </label>
                             <p>
                             <button type="submit">Get Weather</button></p>
-                          </form>
-                          <section class="locale"><section>
+                     </form>
               </span>          
             </header>
         </div>
     <main>
         <div class="locale">
-            <article>
-                <h3></h3>
-               
-                <!-- need to add placeholder on input!! - GiGi -->
+            <section class="locale">
+            <article id="main-location">Choose a location to view the weather.
+
             </article>
-            <aside>
-                <ul>
-                    
-                </ul>
-            </aside>
+        </section>
 
         </div>
-
-        <div class="history">
-            <aside class="history">
-                <section>
-                    <h4>Previous Searches</h4>
-                    <ul><p>
-
-                    </p></ul>
-                </section>
-            </aside>
-        </div>
-
         <div class="weather">
-            <aside class="weather">
-          <div class="today">
-
-          </div>
-
-          <div class="tomorrow">
-
-          </div>
-
-          <div class="dayAfter">
-              
-          </div>
-        </aside>
-
-        </div>
-        <div class="convert">
-            <!-- <aside>
-                <form>
-                    <label for="convert-temp"></label>
-                    <input id="temp-to-convert" name="search" type="number"/>
-                    <label for="to-c"></label>
-                    <input id="to-c" name="celcius" type="radio" value="c"/>
-                    <label for="to-f"></label>
-                    <input id="to-f" name="farenheit" type="radio" value="f"/>
-
-                <section>
-                    <h4 class="total"></h4>
-                </section>
-            </form>
-            </aside> -->
+            <aside id="weather">
+                <div id="today" class="today"> </div>
+                <div id="tomorrow" class="tomorrow"></div>
+                <div id="day-after" class="day-after"></div>
+            </aside>
         </div>
     </main>
-      </div>
-   
+        <div class="history">
+           <aside id="history">
+               <section>
+                   <p id="history-title"><h4>Previous Searches</h4></p>
+                   
+                       <p id="no-search">No previous searches</p>
+                       <ul hidden id="history-list"></ul>
+
+               </section>
+            </aside> 
+           
+        </div>
+        <div class="convert">
+            <aside>
+                <form id="tempWidget">
+                    <label for="convert-temp">Convert the temperature:</label>
+                        <br></br>
+                            <input id="temp-to-convert" name="temp" type="number"/>
+                        <br></br>
+                    <label for="to-c">to C</label>
+                            <input id="to-c" name="convert-temp" type="radio" value="c" checked/>
+                        <br></br>
+                    <label for="to-f">to F</label>
+                             <input id="to-f" name="convert-temp" type="radio" value="f"/>
+                         <br></br>
+                     <input type="submit" name="submit" value="Convert" id="temp-submit" />
+
+                <section>  
+                    <h4 id="result"> </h4>
+                </section>
+            </form>
+            </aside>
+        </div>
     
+    </div>
+      
 </body>
 </html>
